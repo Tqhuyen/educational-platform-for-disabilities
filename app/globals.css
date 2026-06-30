@@ -156,6 +156,33 @@
   }
 }
 
+/* Vietnamese Educational Platform Theme */
+:root {
+  /* Brand Colors - Soft & Friendly */
+  --primary-blue: #0284c7;
+  --primary-blue-light: #e0f2fe;
+  --primary-blue-dark: #0369a1;
+  
+  --accent-green: #10b981;
+  --accent-green-light: #d1fae5;
+  --accent-green-dark: #059669;
+  
+  --accent-orange: #f97316;
+  --accent-orange-light: #fed7aa;
+  --accent-orange-dark: #ea580c;
+  
+  --neutral-50: #fafafa;
+  --neutral-100: #f3f4f6;
+  --neutral-200: #e5e7eb;
+  --neutral-300: #d1d5db;
+  --neutral-400: #9ca3af;
+  --neutral-500: #6b7280;
+  --neutral-600: #4b5563;
+  --neutral-700: #374151;
+  --neutral-800: #1f2937;
+  --neutral-900: #111827;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -165,5 +192,91 @@
   }
   html {
     @apply font-sans;
+  }
+
+  /* Accessible Typography for Children */
+  h1 {
+    @apply text-4xl md:text-5xl font-bold leading-tight text-balance;
+  }
+  
+  h2 {
+    @apply text-3xl md:text-4xl font-bold leading-snug text-balance;
+  }
+  
+  h3 {
+    @apply text-2xl md:text-3xl font-semibold leading-snug;
+  }
+  
+  h4 {
+    @apply text-xl md:text-2xl font-semibold;
+  }
+  
+  p {
+    @apply text-lg leading-relaxed;
+  }
+  
+  button,
+  a,
+  label,
+  input,
+  textarea,
+  select {
+    @apply text-lg;
+  }
+}
+
+@layer components {
+  /* Primary Button - Large & Accessible */
+  .btn-primary {
+    @apply px-6 py-3 md:px-8 md:py-4 bg-[#0284c7] text-white font-bold text-lg rounded-2xl hover:bg-[#0369a1] transition-all duration-200 active:scale-95 focus:outline-none focus:ring-4 focus:ring-[#e0f2fe] disabled:opacity-50 disabled:cursor-not-allowed shadow-sm hover:shadow-md;
+  }
+
+  /* Secondary Button */
+  .btn-secondary {
+    @apply px-6 py-3 md:px-8 md:py-4 bg-neutral-50 border-2 border-[#0284c7] text-[#0284c7] font-bold text-lg rounded-2xl hover:bg-[#e0f2fe] transition-all duration-200 active:scale-95 focus:outline-none focus:ring-4 focus:ring-[#e0f2fe] disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  /* Accent Button - Green */
+  .btn-accent {
+    @apply px-6 py-3 md:px-8 md:py-4 bg-[#10b981] text-white font-bold text-lg rounded-2xl hover:bg-[#059669] transition-all duration-200 active:scale-95 focus:outline-none focus:ring-4 focus:ring-[#d1fae5] disabled:opacity-50 disabled:cursor-not-allowed shadow-sm hover:shadow-md;
+  }
+
+  /* Card Container */
+  .card {
+    @apply bg-white border border-neutral-200 rounded-3xl p-6 md:p-8 shadow-sm hover:shadow-md transition-all duration-200;
+  }
+
+  .card-accent {
+    @apply bg-[#e0f2fe] border border-[#bae6fd] rounded-3xl p-6 md:p-8 shadow-sm;
+  }
+
+  .card-success {
+    @apply bg-[#d1fae5] border border-[#a7f3d0] rounded-3xl p-6 md:p-8 shadow-sm;
+  }
+
+  .card-warning {
+    @apply bg-[#fed7aa] border border-[#fdba74] rounded-3xl p-6 md:p-8 shadow-sm;
+  }
+
+  /* Badge */
+  .badge {
+    @apply inline-flex items-center px-4 py-2 rounded-full text-sm md:text-base font-semibold;
+  }
+
+  .badge-primary {
+    @apply badge bg-[#e0f2fe] text-[#0284c7];
+  }
+
+  .badge-success {
+    @apply badge bg-[#d1fae5] text-[#10b981];
+  }
+
+  .badge-orange {
+    @apply badge bg-[#fed7aa] text-[#f97316];
+  }
+
+  /* Accessible Screen Reader Only Text */
+  .sr-only {
+    @apply absolute w-px h-px p-0 m-px overflow-hidden border-0 whitespace-nowrap;
   }
 }
