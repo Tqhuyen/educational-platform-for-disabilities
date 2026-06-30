@@ -44,33 +44,33 @@ export function HomePage() {
       href: '/learning-center',
       titleEn: 'Learning Center',
       titleVi: 'Trung Tâm Học Tập',
-      colorBg: 'bg-[#e0f2fe]',
-      colorText: 'text-[#0284c7]',
-      colorBorder: 'border-[#bae6fd]',
+      colorBg: 'bg-sky-100',
+      colorText: 'text-sky-600',
+      colorBorder: 'border-sky-200',
     },
     {
       href: '/games',
       titleEn: 'Play Games',
       titleVi: 'Chơi Trò Chơi',
-      colorBg: 'bg-[#d1fae5]',
-      colorText: 'text-[#10b981]',
-      colorBorder: 'border-[#a7f3d0]',
+      colorBg: 'bg-emerald-100',
+      colorText: 'text-emerald-600',
+      colorBorder: 'border-emerald-200',
     },
     {
       href: '/sign-language',
       titleEn: 'Sign Language',
       titleVi: 'Ngôn Ngữ Ký Hiệu',
-      colorBg: 'bg-[#fed7aa]',
-      colorText: 'text-[#f97316]',
-      colorBorder: 'border-[#fdba74]',
+      colorBg: 'bg-amber-100',
+      colorText: 'text-amber-600',
+      colorBorder: 'border-amber-200',
     },
     {
       href: '/resources',
       titleEn: 'Resources',
       titleVi: 'Tài Nguyên',
-      colorBg: 'bg-neutral-100',
-      colorText: 'text-neutral-700',
-      colorBorder: 'border-neutral-200',
+      colorBg: 'bg-slate-100',
+      colorText: 'text-slate-600',
+      colorBorder: 'border-slate-200',
     },
   ]
 
@@ -109,20 +109,20 @@ export function HomePage() {
             {/* Stats */}
             <div className="grid grid-cols-3 gap-4 pt-4">
               <div className="card">
-                <div className="text-3xl md:text-4xl font-bold text-[#0284c7]">1000+</div>
-                <p className="text-neutral-600 font-semibold mt-2">
+                <div className="text-3xl md:text-4xl font-bold text-sky-600">1000+</div>
+                <p className="text-slate-600 font-semibold mt-2">
                   {language === 'vi' ? 'Bài Học' : 'Lessons'}
                 </p>
               </div>
               <div className="card">
-                <div className="text-3xl md:text-4xl font-bold text-[#10b981]">50K+</div>
-                <p className="text-neutral-600 font-semibold mt-2">
+                <div className="text-3xl md:text-4xl font-bold text-emerald-600">50K+</div>
+                <p className="text-slate-600 font-semibold mt-2">
                   {language === 'vi' ? 'Người Học' : 'Learners'}
                 </p>
               </div>
               <div className="card">
-                <div className="text-3xl md:text-4xl font-bold text-[#f97316]">15+</div>
-                <p className="text-neutral-600 font-semibold mt-2">
+                <div className="text-3xl md:text-4xl font-bold text-amber-600">15+</div>
+                <p className="text-slate-600 font-semibold mt-2">
                   {language === 'vi' ? 'Trò Chơi' : 'Games'}
                 </p>
               </div>
@@ -134,32 +134,32 @@ export function HomePage() {
             <div className="grid grid-cols-2 gap-4">
               <div className="card-accent h-64 flex items-center justify-center">
                 <div className="text-center">
-                  <BookOpen className="w-16 h-16 text-[#0284c7] mx-auto mb-4" />
-                  <p className="font-semibold text-[#0284c7]">
+                  <BookOpen className="w-16 h-16 text-sky-600 mx-auto mb-4" />
+                  <p className="font-semibold text-sky-600">
                     {language === 'vi' ? 'Học Tập' : 'Learn'}
                   </p>
                 </div>
               </div>
               <div className="card-success h-64 flex items-center justify-center">
                 <div className="text-center">
-                  <Gamepad2 className="w-16 h-16 text-[#10b981] mx-auto mb-4" />
-                  <p className="font-semibold text-[#10b981]">
+                  <Gamepad2 className="w-16 h-16 text-emerald-600 mx-auto mb-4" />
+                  <p className="font-semibold text-emerald-600">
                     {language === 'vi' ? 'Chơi' : 'Play'}
                   </p>
                 </div>
               </div>
               <div className="card-warning h-64 flex items-center justify-center">
                 <div className="text-center">
-                  <TrendingUp className="w-16 h-16 text-[#f97316] mx-auto mb-4" />
-                  <p className="font-semibold text-[#f97316]">
+                  <TrendingUp className="w-16 h-16 text-amber-600 mx-auto mb-4" />
+                  <p className="font-semibold text-amber-600">
                     {language === 'vi' ? 'Tiến Độ' : 'Progress'}
                   </p>
                 </div>
               </div>
-              <div className="card h-64 flex items-center justify-center border-2 border-neutral-300">
+              <div className="card h-64 flex items-center justify-center border-2 border-slate-300">
                 <div className="text-center">
-                  <Star className="w-16 h-16 text-neutral-700 mx-auto mb-4" />
-                  <p className="font-semibold text-neutral-700">
+                  <Star className="w-16 h-16 text-slate-700 mx-auto mb-4" />
+                  <p className="font-semibold text-slate-700">
                     {language === 'vi' ? 'Phần Thưởng' : 'Rewards'}
                   </p>
                 </div>
@@ -170,13 +170,13 @@ export function HomePage() {
       </section>
 
       {/* Features Section */}
-      <section className="py-16 md:py-24 px-4 md:px-6 bg-neutral-50">
+      <section className="py-16 md:py-24 px-4 md:px-6 bg-slate-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
               {language === 'vi' ? 'Tính Năng Chính' : 'Key Features'}
             </h2>
-            <p className="text-xl text-neutral-600">
+            <p className="text-xl text-slate-600">
               {language === 'vi'
                 ? 'Mọi công cụ bạn cần để thành công'
                 : 'Everything you need to succeed'}
@@ -188,13 +188,13 @@ export function HomePage() {
               const Icon = feature.icon
               return (
                 <div key={index} className="card hover:shadow-lg">
-                  <div className="bg-gradient-to-br from-[#e0f2fe] to-[#d1fae5] rounded-2xl p-6 mb-6 flex items-center justify-center h-20">
-                    <Icon className="w-10 h-10 text-[#0284c7]" />
+                  <div className="bg-gradient-to-br from-sky-100 to-emerald-100 rounded-2xl p-6 mb-6 flex items-center justify-center h-20">
+                    <Icon className="w-10 h-10 text-sky-600" />
                   </div>
-                  <h3 className="text-xl font-bold text-neutral-900 mb-3">
+                  <h3 className="text-xl font-bold text-slate-900 mb-3">
                     {language === 'vi' ? feature.titleVi : feature.titleEn}
                   </h3>
-                  <p className="text-neutral-600 leading-relaxed">
+                  <p className="text-slate-600 leading-relaxed">
                     {language === 'vi' ? feature.descVi : feature.descEn}
                   </p>
                 </div>
