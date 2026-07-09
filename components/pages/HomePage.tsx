@@ -2,201 +2,252 @@
 
 import Link from 'next/link'
 import { useLanguage } from '@/lib/language-context'
-import { translate } from '@/lib/i18n'
-import { Star, BookOpen, Gamepad2, TrendingUp, ArrowRight } from 'lucide-react'
+import { BookOpen, Gamepad2, TrendingUp, Star, Users, Zap, Target, Volume2, ArrowRight, Sparkles, Heart, Award } from 'lucide-react'
 
 export function HomePage() {
   const { language } = useLanguage()
 
+  const impactStats = [
+    {
+      number: '1000+',
+      label: language === 'vi' ? 'Bài Học Tương Tác' : 'Interactive Lessons',
+      description: language === 'vi' ? 'Được cập nhật thường xuyên' : 'Constantly updated',
+      color: 'from-sky-400 to-sky-600',
+    },
+    {
+      number: '85%',
+      label: language === 'vi' ? 'Tỷ Lệ Hoàn Thành' : 'Completion Rate',
+      description: language === 'vi' ? 'Học sinh hài lòng' : 'Student satisfaction',
+      color: 'from-emerald-400 to-emerald-600',
+    },
+    {
+      number: '500K',
+      label: language === 'vi' ? 'Phút Học Tập' : 'Learning Minutes',
+      description: language === 'vi' ? 'Cộng đồng đang hoạt động' : 'Active community',
+      color: 'from-amber-400 to-amber-600',
+    },
+    {
+      number: '15+',
+      label: language === 'vi' ? 'Loại Hoạt Động' : 'Activity Types',
+      description: language === 'vi' ? 'Dựa trên liệu pháp' : 'Therapy-based',
+      color: 'from-rose-400 to-rose-600',
+    },
+  ]
+
   const features = [
     {
       icon: BookOpen,
-      titleEn: 'Interactive Lessons',
-      titleVi: 'Bài Học Tương Tác',
-      descEn: 'Learn through engaging, step-by-step lessons designed for your needs',
-      descVi: 'Học tập thông qua các bài học hấp dẫn, được thiết kế đặc biệt cho bạn',
+      titleEn: 'AI-Powered Learning',
+      titleVi: 'Học Tập Thông Minh',
+      descEn: 'Adaptive lessons that evolve with each child\'s unique needs',
+      descVi: 'Bài học thích ứng phát triển theo nhu cầu riêng',
     },
     {
       icon: Gamepad2,
-      titleEn: 'Fun Games',
-      titleVi: 'Trò Chơi Vui Nhộn',
-      descEn: 'Practice your skills with educational games that are fun and rewarding',
-      descVi: 'Thực hành kỹ năng với các trò chơi vừa vui vừa bổ ích',
+      titleEn: 'Gamified Practice',
+      titleVi: 'Thực Hành Chơi Chơi',
+      descEn: 'Transform therapy into engaging games children love',
+      descVi: 'Biến liệu pháp thành trò chơi hấp dẫn',
     },
     {
       icon: TrendingUp,
-      titleEn: 'Track Progress',
-      titleVi: 'Theo Dõi Tiến Độ',
-      descEn: 'Watch your improvements with detailed progress tracking',
-      descVi: 'Xem những tiến bộ của bạn qua biểu đồ chi tiết',
+      titleEn: 'Real-time Analytics',
+      titleVi: 'Phân Tích Trực Tiếp',
+      descEn: 'Parents and therapists track progress instantly',
+      descVi: 'Phụ huynh theo dõi tiến độ tức thì',
     },
     {
-      icon: Star,
-      titleEn: 'Earn Rewards',
-      titleVi: 'Nhận Phần Thưởng',
-      descEn: 'Complete lessons and games to earn badges and achievements',
-      descVi: 'Hoàn thành bài học để kiếm huy hiệu và thành tích',
+      icon: Volume2,
+      titleEn: 'Speech Recognition',
+      titleVi: 'Nhận Dạng Giọng Nói',
+      descEn: 'Smart feedback on pronunciation and articulation',
+      descVi: 'Phản hồi thông minh về phát âm',
+    },
+  ]
+
+  const successStories = [
+    {
+      name: language === 'vi' ? 'Minh' : 'Minh',
+      age: '7 tuổi',
+      story: language === 'vi' ? 'Cải thiện phát âm sau 6 tháng' : 'Pronunciation improved in 6 months',
+      improvement: language === 'vi' ? '6 tháng sử dụng' : '6 months of use',
+    },
+    {
+      name: language === 'vi' ? 'Linh' : 'Linh',
+      age: '5 tuổi',
+      story: language === 'vi' ? 'Phát triển từ vựng nhanh hơn' : 'Vocabulary development accelerated',
+      improvement: language === 'vi' ? '3 tháng sử dụng' : '3 months of use',
+    },
+    {
+      name: language === 'vi' ? 'Hoàng' : 'Hoang',
+      age: '8 tuổi',
+      story: language === 'vi' ? 'Tự tin giao tiếp hơn' : 'More confident communication',
+      improvement: language === 'vi' ? '4 tháng sử dụng' : '4 months of use',
+    },
+  ]
+
+  const coreFeatures = [
+    {
+      icon: Sparkles,
+      titleEn: 'Personalized Paths',
+      titleVi: 'Con Đường Riêng',
+    },
+    {
+      icon: Heart,
+      titleEn: 'Inclusive Design',
+      titleVi: 'Thiết Kế Toàn Diện',
+    },
+    {
+      icon: Award,
+      titleEn: 'Certified Methods',
+      titleVi: 'Phương Pháp Chứng Thực',
     },
   ]
 
   const quickLinks = [
     {
       href: '/learning-center',
-      titleEn: 'Learning Center',
-      titleVi: 'Trung Tâm Học Tập',
-      colorBg: 'bg-sky-100',
-      colorText: 'text-sky-600',
-      colorBorder: 'border-sky-200',
+      titleEn: 'Interactive Lessons',
+      titleVi: 'Bài Học Tương Tác',
+      colorBg: 'from-sky-400 to-sky-600',
+      icon: BookOpen,
     },
     {
       href: '/games',
-      titleEn: 'Play Games',
-      titleVi: 'Chơi Trò Chơi',
-      colorBg: 'bg-emerald-100',
-      colorText: 'text-emerald-600',
-      colorBorder: 'border-emerald-200',
+      titleEn: 'Fun Games',
+      titleVi: 'Trò Chơi Vui',
+      colorBg: 'from-emerald-400 to-emerald-600',
+      icon: Gamepad2,
     },
     {
       href: '/sign-language',
       titleEn: 'Sign Language',
-      titleVi: 'Ngôn Ngữ Ký Hiệu',
-      colorBg: 'bg-amber-100',
-      colorText: 'text-amber-600',
-      colorBorder: 'border-amber-200',
+      titleVi: 'Ký Hiệu Giao Tiếp',
+      colorBg: 'from-amber-400 to-amber-600',
+      icon: Volume2,
     },
     {
-      href: '/resources',
-      titleEn: 'Resources',
-      titleVi: 'Tài Nguyên',
-      colorBg: 'bg-slate-100',
-      colorText: 'text-slate-600',
-      colorBorder: 'border-slate-200',
+      href: '/progress',
+      titleEn: 'Track Progress',
+      titleVi: 'Theo Dõi Tiến Độ',
+      colorBg: 'from-rose-400 to-rose-600',
+      icon: TrendingUp,
     },
   ]
 
   return (
-    <div className="bg-white">
-      {/* Hero Section */}
-      <section className="pt-12 md:pt-20 pb-16 md:pb-24 px-4 md:px-6 max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
-          <div className="flex flex-col gap-8">
-            <div className="space-y-4">
-              <h1 className="text-4xl md:text-5xl font-bold text-neutral-900 leading-tight">
+    <div className="bg-white overflow-hidden">
+      {/* Stunning Hero Section */}
+      <section className="relative min-h-screen flex items-center justify-center px-4 md:px-6 py-20">
+        <div className="absolute inset-0 bg-gradient-to-br from-sky-50 via-white to-emerald-50 -z-10 animate-gradient-shift" />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-sky-200 to-transparent rounded-full blur-3xl opacity-30 -z-10 animate-float" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-emerald-200 to-transparent rounded-full blur-3xl opacity-30 -z-10 animate-float-delayed" />
+        
+        <div className="max-w-7xl mx-auto w-full">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="space-y-8 animate-fade-in-left">
+              <div className="space-y-6">
+                <div className="inline-flex items-center gap-2 bg-sky-100 text-sky-700 px-4 py-2 rounded-full animate-bounce-in">
+                  <Sparkles className="w-4 h-4 animate-rotate-slow" />
+                  <span className="text-sm font-semibold">
+                    {language === 'vi' ? 'Giáo dục Tương Lai' : 'Future Education'}
+                  </span>
+                </div>
+                <h1 className="text-5xl md:text-6xl font-bold text-gray-900 leading-tight animate-fade-in-up stagger-1">
+                  {language === 'vi' 
+                    ? 'Mở Khóa Khả Năng Giao Tiếp' 
+                    : 'Unlock Communication Potential'}
+                </h1>
+              </div>
+
+              <p className="text-xl md:text-2xl text-gray-600 leading-relaxed animate-fade-in-up stagger-2">
                 {language === 'vi'
-                  ? 'Chào Mừng Đến Với Hành Trình Học Tập Của Bạn'
-                  : 'Welcome to Your Learning Journey'}
-              </h1>
-              <p className="text-xl md:text-2xl text-neutral-600 leading-relaxed">
-                {language === 'vi'
-                  ? 'Một nền tảng học tập được thiết kế đặc biệt để giúp phát triển kỹ năng giao tiếp của bạn'
-                  : 'A learning platform designed specifically to help you develop your communication skills'}
+                  ? 'Nền tảng học tập AI được thiết kế cho trẻ em có rối loạn phát âm. Hỗ trợ phát triển giao tiếp tự nhiên.'
+                  : 'AI-powered learning platform for children with speech disabilities. Supporting natural communication development.'}
               </p>
+
+              <div className="flex flex-col sm:flex-row gap-4 pt-4 animate-fade-in-up stagger-3">
+                <Link href="/learning-center" className="btn-primary group flex items-center justify-center gap-2 hover-lift">
+                  {language === 'vi' ? 'Bắt Đầu Ngay' : 'Start Now'}
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </Link>
+                <button className="btn-secondary hover-lift">
+                  {language === 'vi' ? 'Xem Demo' : 'Watch Demo'}
+                </button>
+              </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/learning-center" className="btn-primary">
-                <span className="flex items-center justify-center gap-2">
-                  {translate('exploreNow', language)}
-                  <ArrowRight className="w-5 h-5" />
-                </span>
-              </Link>
-              <button className="btn-secondary">
-                {translate('learningJourney', language)}
-              </button>
-            </div>
-
-            {/* Stats */}
-            <div className="grid grid-cols-3 gap-4 pt-4">
-              <div className="card">
-                <div className="text-3xl md:text-4xl font-bold text-sky-600">1000+</div>
-                <p className="text-slate-600 font-semibold mt-2">
-                  {language === 'vi' ? 'Bài Học' : 'Lessons'}
-                </p>
-              </div>
-              <div className="card">
-                <div className="text-3xl md:text-4xl font-bold text-emerald-600">50K+</div>
-                <p className="text-slate-600 font-semibold mt-2">
-                  {language === 'vi' ? 'Người Học' : 'Learners'}
-                </p>
-              </div>
-              <div className="card">
-                <div className="text-3xl md:text-4xl font-bold text-amber-600">15+</div>
-                <p className="text-slate-600 font-semibold mt-2">
-                  {language === 'vi' ? 'Trò Chơi' : 'Games'}
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Right Visual */}
-          <div className="relative">
-            <div className="grid grid-cols-2 gap-4">
-              <div className="card-accent h-64 flex items-center justify-center">
-                <div className="text-center">
-                  <BookOpen className="w-16 h-16 text-sky-600 mx-auto mb-4" />
-                  <p className="font-semibold text-sky-600">
-                    {language === 'vi' ? 'Học Tập' : 'Learn'}
-                  </p>
+            {/* Right side visual - Impact cards */}
+            <div className="grid grid-cols-2 gap-4 animate-fade-in-right">
+              {impactStats.map((stat, index) => (
+                <div key={index} className={`bg-gradient-to-br ${stat.color} rounded-3xl p-8 text-white shadow-lg hover-lift animate-scale-in stagger-${index + 1}`} style={{animationDelay: `${index * 0.1}s`}}>
+                  <div className="text-4xl md:text-5xl font-bold mb-2 animate-glow-pulse">{stat.number}</div>
+                  <div className="text-lg font-semibold mb-1">{stat.label}</div>
+                  <div className="text-sm opacity-90">{stat.description}</div>
                 </div>
-              </div>
-              <div className="card-success h-64 flex items-center justify-center">
-                <div className="text-center">
-                  <Gamepad2 className="w-16 h-16 text-emerald-600 mx-auto mb-4" />
-                  <p className="font-semibold text-emerald-600">
-                    {language === 'vi' ? 'Chơi' : 'Play'}
-                  </p>
-                </div>
-              </div>
-              <div className="card-warning h-64 flex items-center justify-center">
-                <div className="text-center">
-                  <TrendingUp className="w-16 h-16 text-amber-600 mx-auto mb-4" />
-                  <p className="font-semibold text-amber-600">
-                    {language === 'vi' ? 'Tiến Độ' : 'Progress'}
-                  </p>
-                </div>
-              </div>
-              <div className="card h-64 flex items-center justify-center border-2 border-slate-300">
-                <div className="text-center">
-                  <Star className="w-16 h-16 text-slate-700 mx-auto mb-4" />
-                  <p className="font-semibold text-slate-700">
-                    {language === 'vi' ? 'Phần Thưởng' : 'Rewards'}
-                  </p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="py-16 md:py-24 px-4 md:px-6 bg-slate-50">
+      {/* Success Stories Section */}
+      <section className="py-20 md:py-32 px-4 md:px-6 bg-gradient-to-b from-slate-50 to-white">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-              {language === 'vi' ? 'Tính Năng Chính' : 'Key Features'}
+          <div className="text-center mb-16 animate-fade-in-down">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 animate-fade-in-up stagger-1">
+              {language === 'vi' ? 'Những Câu Chuyện Thành Công' : 'Success Stories'}
             </h2>
-            <p className="text-xl text-slate-600">
-              {language === 'vi'
-                ? 'Mọi công cụ bạn cần để thành công'
-                : 'Everything you need to succeed'}
+            <p className="text-xl text-gray-600 animate-fade-in-up stagger-2">
+              {language === 'vi' ? 'Trẻ em và gia đình đang sử dụng nền tảng' : 'Children and families using the platform'}
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-3 gap-8">
+            {successStories.map((story, index) => (
+              <div key={index} className="card hover-lift border-2 border-emerald-100 animate-slide-in-up stagger-${index + 1}" style={{animationDelay: `${index * 0.15}s`}}>
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-16 h-16 bg-gradient-to-br from-sky-400 to-emerald-400 rounded-full flex items-center justify-center text-white font-bold text-xl animate-bounce-in">
+                    {story.name[0]}
+                  </div>
+                  <div>
+                    <div className="font-bold text-lg text-gray-900">{story.name}</div>
+                    <div className="text-sm text-gray-600">{story.age}</div>
+                  </div>
+                </div>
+                <p className="text-gray-700 font-semibold mb-3">{story.story}</p>
+                <div className="bg-emerald-50 text-emerald-700 px-4 py-2 rounded-lg text-sm font-bold inline-block animate-glow-pulse">
+                  {story.improvement}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Core Features */}
+      <section className="py-20 md:py-32 px-4 md:px-6 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-16 text-center animate-fade-in-down">
+            {language === 'vi' ? 'Tính Năng Ưu Việt' : 'Why We\'re Different'}
+          </h2>
+
+          <div className="grid md:grid-cols-4 gap-8">
             {features.map((feature, index) => {
               const Icon = feature.icon
               return (
-                <div key={index} className="card hover:shadow-lg">
-                  <div className="bg-gradient-to-br from-sky-100 to-emerald-100 rounded-2xl p-6 mb-6 flex items-center justify-center h-20">
-                    <Icon className="w-10 h-10 text-sky-600" />
+                <div key={index} className="group animate-scale-in stagger-${index + 1}" style={{animationDelay: `${index * 0.1}s`}}>
+                  <div className="bg-gradient-to-br from-sky-50 to-emerald-50 rounded-2xl p-8 h-full hover-lift group-hover:shadow-lg transition-all duration-300 hover:bg-gradient-to-br hover:from-sky-100 hover:to-emerald-100">
+                    <div className="w-14 h-14 bg-gradient-to-br from-sky-400 to-emerald-400 rounded-xl flex items-center justify-center text-white mb-6 group-hover:scale-110 group-hover:animate-rotate-slow transition-transform">
+                      <Icon className="w-7 h-7" />
+                    </div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-3">
+                      {language === 'vi' ? feature.titleVi : feature.titleEn}
+                    </h3>
+                    <p className="text-gray-600">
+                      {language === 'vi' ? feature.descVi : feature.descEn}
+                    </p>
                   </div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-3">
-                    {language === 'vi' ? feature.titleVi : feature.titleEn}
-                  </h3>
-                  <p className="text-slate-600 leading-relaxed">
-                    {language === 'vi' ? feature.descVi : feature.descEn}
-                  </p>
                 </div>
               )
             })}
@@ -204,88 +255,93 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* Quick Links Section */}
-      <section className="py-16 md:py-24 px-4 md:px-6">
+      {/* Quick Access Section */}
+      <section className="py-20 md:py-32 px-4 md:px-6 bg-gradient-to-b from-white to-slate-50">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-12 text-center">
-            {language === 'vi' ? 'Bắt Đầu Ngay' : 'Get Started Now'}
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-16 text-center animate-fade-in-down">
+            {language === 'vi' ? 'Khám Phá Ngay' : 'Explore Now'}
           </h2>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {quickLinks.map((link, index) => (
-              <Link
-                key={index}
-                href={link.href}
-                className={`${link.colorBg} ${link.colorBorder} border-2 rounded-3xl p-8 md:p-12 hover:shadow-lg transition-all duration-200 hover:-translate-y-2 group`}
-              >
-                <div className="flex items-center justify-between">
-                  <div>
-                    <h3 className={`${link.colorText} text-2xl md:text-3xl font-bold mb-2`}>
-                      {language === 'vi' ? link.titleVi : link.titleEn}
-                    </h3>
-                    <p className={`${link.colorText} opacity-75 font-semibold`}>
-                      {language === 'vi'
-                        ? 'Tập trung vào sự phát triển của bạn'
-                        : 'Focus on your development'}
-                    </p>
-                  </div>
-                  <ArrowRight className={`${link.colorText} w-8 h-8 group-hover:translate-x-2 transition-transform`} />
-                </div>
-              </Link>
-            ))}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {quickLinks.map((link, index) => {
+              const Icon = link.icon
+              return (
+                <Link
+                  key={index}
+                  href={link.href}
+                  className={`bg-gradient-to-br ${link.colorBg} rounded-2xl p-8 text-white hover-lift group animate-bounce-in stagger-${index + 1}`}
+                  style={{animationDelay: `${index * 0.1}s`}}
+                >
+                  <Icon className="w-12 h-12 mb-4 group-hover:scale-110 group-hover:animate-rotate-slow transition-transform" />
+                  <h3 className="text-xl font-bold mb-2">
+                    {language === 'vi' ? link.titleVi : link.titleEn}
+                  </h3>
+                  <p className="text-sm opacity-90">
+                    {language === 'vi' ? 'Bắt đầu ngay' : 'Get started'}
+                  </p>
+                  <ArrowRight className="w-5 h-5 mt-4 group-hover:translate-x-2 transition-transform" />
+                </Link>
+              )
+            })}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 md:py-24 px-4 md:px-6 bg-gradient-to-br from-[#0284c7] to-[#10b981]">
-        <div className="max-w-4xl mx-auto text-center text-white">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            {language === 'vi'
-              ? 'Sẵn Sàng Bắt Đầu Hành Trình Của Bạn?'
-              : 'Ready to Start Your Journey?'}
+      {/* Final CTA - Investment/Partnership */}
+      <section className="py-20 md:py-32 px-4 md:px-6 bg-gradient-to-r from-slate-900 to-gray-900 text-white">
+        <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in-up">
+          <h2 className="text-4xl md:text-5xl font-bold animate-slide-in-down">
+            {language === 'vi' 
+              ? 'Hãy Cùng Thay Đổi Cuộc Sống' 
+              : 'Join Us in Changing Lives'}
           </h2>
-          <p className="text-xl mb-8 opacity-90">
+          <p className="text-xl opacity-90 animate-fade-in-up stagger-1">
             {language === 'vi'
-              ? 'Tham gia hàng ngàn học sinh khác đang phát triển kỹ năng giao tiếp của họ'
-              : 'Join thousands of students developing their communication skills'}
+              ? 'Nền tảng được xây dựng bởi giáo viên, nhà trị liệu và cha mẹ.'
+              : 'Built by educators, therapists, and parents.'}
           </p>
-          <Link href="/learning-center" className="inline-block bg-white text-[#0284c7] font-bold px-8 py-4 rounded-2xl hover:shadow-lg transition-all duration-200 hover:scale-105">
-            {translate('start', language)}
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4 animate-fade-in-up stagger-2">
+            <Link href="/learning-center" className="bg-white text-slate-900 font-bold px-8 py-4 rounded-xl hover:shadow-lg transition-all hover:scale-105 inline-flex items-center justify-center gap-2 hover-lift animate-bounce-in">
+              {language === 'vi' ? 'Thử Miễn Phí' : 'Try For Free'}
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+            <button className="border-2 border-white text-white font-bold px-8 py-4 rounded-xl hover:bg-white/10 transition-all hover-lift animate-bounce-in stagger-1">
+              {language === 'vi' ? 'Liên Hệ Đối Tác' : 'Partner With Us'}
+            </button>
+          </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-neutral-900 text-white py-12 px-4 md:px-6">
+      <footer className="bg-black text-white py-12 px-4 md:px-6">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-4 gap-8 mb-12">
             <div>
               <h4 className="font-bold text-lg mb-4">
-                {language === 'vi' ? 'Về Chúng Tôi' : 'About Us'}
+                {language === 'vi' ? 'Về Chúng Tôi' : 'About'}
               </h4>
-              <p className="text-neutral-400 leading-relaxed">
+              <p className="text-gray-400 leading-relaxed">
                 {language === 'vi'
-                  ? 'Nền tảng học tập cho sinh viên Việt Nam'
-                  : 'A learning platform for Vietnamese students'}
+                  ? 'Nền tảng giáo dục AI hàng đầu cho trẻ em có rối loạn phát âm'
+                  : 'Leading AI education platform for children with speech disabilities'}
               </p>
             </div>
             <div>
               <h4 className="font-bold text-lg mb-4">
-                {language === 'vi' ? 'Liên Kết' : 'Links'}
+                {language === 'vi' ? 'Tính Năng' : 'Features'}
               </h4>
-              <ul className="space-y-2 text-neutral-400">
-                <li><a href="#" className="hover:text-white transition">Home</a></li>
+              <ul className="space-y-2 text-gray-400">
                 <li><a href="#" className="hover:text-white transition">Lessons</a></li>
                 <li><a href="#" className="hover:text-white transition">Games</a></li>
+                <li><a href="#" className="hover:text-white transition">Progress</a></li>
               </ul>
             </div>
             <div>
               <h4 className="font-bold text-lg mb-4">
                 {language === 'vi' ? 'Hỗ Trợ' : 'Support'}
               </h4>
-              <ul className="space-y-2 text-neutral-400">
-                <li><a href="#" className="hover:text-white transition">Help</a></li>
+              <ul className="space-y-2 text-gray-400">
+                <li><a href="#" className="hover:text-white transition">Help Center</a></li>
                 <li><a href="#" className="hover:text-white transition">Contact</a></li>
                 <li><a href="#" className="hover:text-white transition">FAQ</a></li>
               </ul>
@@ -294,18 +350,18 @@ export function HomePage() {
               <h4 className="font-bold text-lg mb-4">
                 {language === 'vi' ? 'Pháp Lý' : 'Legal'}
               </h4>
-              <ul className="space-y-2 text-neutral-400">
+              <ul className="space-y-2 text-gray-400">
                 <li><a href="#" className="hover:text-white transition">Privacy</a></li>
                 <li><a href="#" className="hover:text-white transition">Terms</a></li>
                 <li><a href="#" className="hover:text-white transition">Cookies</a></li>
               </ul>
             </div>
           </div>
-          <div className="border-t border-neutral-800 pt-8 text-center text-neutral-400">
+          <div className="border-t border-gray-800 pt-8 text-center text-gray-500">
             <p>
               {language === 'vi'
-                ? '© 2024 Nền Tảng Học Tập Việt Nam. Bảo lưu mọi quyền.'
-                : '© 2024 Vietnamese Learning Platform. All rights reserved.'}
+                ? '© 2024 Nền Tảng Giáo Dục Việt Nam. Bảo lưu mọi quyền.'
+                : '© 2024 Vietnamese Education Platform. All rights reserved.'}
             </p>
           </div>
         </div>
